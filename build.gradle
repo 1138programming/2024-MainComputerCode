@@ -9,7 +9,7 @@
 
 
 plugins {
-    apply plugin: 'java'
+    
     id "java"
     
 }
@@ -20,6 +20,8 @@ targetCompatibility = JavaVersion.VERSION_11
 repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()
+
+
 }
 
 dependencies {
@@ -30,12 +32,16 @@ dependencies {
     implementation 'com.google.guava:guava:31.1-jre'
 
     // https://mvnrepository.com/artifact/org.json/json
-    implementation 'org.json:json:20231013'
+    // implementation group: 'org.json', name: 'json', version: '20231013'
+    // implementation files('/lib/json-20231013.jar')
+    implementation fileTree(dir: 'libs', include: '*.jar')
+
 }
 
-application {
-    // Define the main class for the application.
-    mainClass = 'maincomputercode.Main.java'
+jar {
+    manifest {
+        attributes 'Main-Class': 'maincomputercode.Main'
+    }
 }
 
 tasks.named('test') {
