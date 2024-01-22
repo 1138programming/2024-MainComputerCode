@@ -1,4 +1,4 @@
-package MainComputerCode.Database;
+package MainComputerCode.database;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -8,17 +8,13 @@ import org.json.*;
 
 
 public class Database {
-    private String json;
+    private String json = "";
     public void printjson() {
         try {
         // FileReader Class used
-        FileReader fileReader
-            = new FileReader("JSON_Saves/Test.json");
-            
-        json = new String();
+        FileReader fileReader = new FileReader("JSON/Saves/Test.json"); 
 
         int i;
- 
             // Using read method
         while ((i = fileReader.read()) != -1) {
             json += (char)i;
