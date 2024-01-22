@@ -8,8 +8,4 @@
  */
 
 rootProject.name = '2024-MainComputerCode'
-include('app')
-
-
-
 

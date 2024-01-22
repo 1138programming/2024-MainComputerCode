@@ -1,9 +1,13 @@
-package src.main.java.maincomputercode;
+package MainComputerCode;
 
 
+import MainComputerCode.Database.Database;
 
 public class Main {
-public static void main(String[] args) {
-    System.out.print("hello_world");
-}
+    static Database database = new Database();
+    public static void main(String[] args) {
+        database.printjson();
+    }
+    
+
 }
