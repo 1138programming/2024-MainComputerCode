@@ -26,8 +26,8 @@ public class Database {
 
         System.out.println(json);
         
-        JSONArray jsonArray = CDL.rowToJSONArray(new JSONTokener(json));        
-        System.out.println(jsonArray);
+        JSONObject JSONObject = Cookie.toJSONObject(json);
+        System.out.println(JSONObject);
         
     }
     catch (Exception e) {
