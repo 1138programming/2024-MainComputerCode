@@ -1,4 +1,4 @@
-package MainComputerCode.database;
+package MainComputerCode.Database;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;

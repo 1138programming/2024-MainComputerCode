@@ -1,4 +1,4 @@
-package MainComputerCode.bluetooth;
+package MainComputerCode.Bluetooth;
 public class BluetoothParsing {
     
 }
