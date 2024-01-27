@@ -8,7 +8,7 @@ public class Main {
     static Database database = new Database();
     static TBA TBARequest = new TBA();
     public static void main(String[] args) {
-        TBARequest.writeToFile(TBARequest.getRequest("teams/1", null, null));
+        TBARequest.writeToFile(TBARequest.getRequest("team/frc1138", null, null));
         database.printjson();
     }
     
