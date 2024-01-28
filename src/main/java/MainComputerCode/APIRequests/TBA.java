@@ -22,7 +22,7 @@ public class TBA {
         try {
             // ___ get data from TBA API ___
             // init request, will need to change
-            HttpRequest.Builder builder = HttpRequest.newBuilder(new URI("https://www.thebluealliance.com/api/v3/" + requestType)).GET().header("X-TBA-Auth-Key", "IOB4YXM4T4wE485Kspo8exJBnjhCVoS5bMKxPhcGIrlDA2dIb3iAyNhX76YLRJB0");
+            HttpRequest.Builder builder = HttpRequest.newBuilder(new URI("https://www.thebluealliance.com/api/v3/" + requestType)).GET().header("X-TBA-Auth-Key", "");
             // if there are headers, use them...
             if (headers != null) {
                 for(int i = 0; i < headers.length; i++) {
