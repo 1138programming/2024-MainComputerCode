@@ -49,7 +49,7 @@ public class TBA {
             // myFile.close();
         }
         catch(Exception e) {
-            System.err.println("Unable to get data; error = ");
+            System.err.println("Unable to get TBA data; error = ");
             e.printStackTrace();
             return null;
         }
