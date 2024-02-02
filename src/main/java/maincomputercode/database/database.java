@@ -14,23 +14,22 @@ import java.sql.*;
 public class Database {
     private String json = "";
     private JSONObject jObject = null;
-    
-    public Connection getConnection()  {
+    private Connection conn = null;
+    public Database () {
         try {
-        // Class.forName("org.mariadb.jdbc.Driver");
-        Connection conn = null;
+        
         Properties connectionProps = new Properties();
         connectionProps.put("user", "root");
         connectionProps.put("password", "1138");
         conn = DriverManager.getConnection(
             "jdbc:mariadb://localhost:3306/1138scapp",
             connectionProps);
-        return conn;
+        
         }
         catch(SQLException ex) {
-            System.err.println("Unable to connect to Database; error = ");
+            System.err.println("Unable to connect to database; error = ");
             ex.printStackTrace();
-            return null;
+            
 
         }
         // catch (ClassNotFoundException e) {
@@ -39,6 +38,57 @@ public class Database {
         //     return null;
         // }
     }
+    public void InsertData() { 
+        String query = "";
+    }
+
+    public void viewTables() {
+
+        String query = "select * from scmatch;";
+        String data ="";
+        try (Statement stmt = conn.createStatement()) {
+            ResultSet rs = stmt.executeQuery(query);
+            while (rs.next()) {
+                data = data + " Description: " + rs.getString("Description") + " Id: " + rs.getString("BAMatchId") + " ||";
+            }
+            System.out.println(data);
+            
+
+          } 
+          catch (SQLException e) {
+            System.err.println("Error proccessing data; error =");
+            e.printStackTrace();
+            System.err.println("SQLState: " +
+            ((SQLException)e).getSQLState());
+          }
+    }
+    
+    // public Connection getConnection()  {
+    //     try {
+    //     // Class.forName("org.mariadb.jdbc.Driver");
+    //     Connection conn = null;
+    //     Properties connectionProps = new Properties();
+    //     connectionProps.put("user", "root");
+    //     connectionProps.put("password", "1138");
+    //     conn = DriverManager.getConnection(
+    //         "jdbc:mariadb://localhost:3306/1138scapp",
+    //         connectionProps);
+    //     return conn;
+    //     }
+    //     catch(SQLException ex) {
+    //         System.err.println("Unable to connect to database; error = ");
+    //         ex.printStackTrace();
+    //         return null;
+
+    //     }
+    //     // catch (ClassNotFoundException e) {
+    //     //     System.err.println("Database Driver Classpath error = ");
+    //     //     e.printStackTrace();
+    //     //     return null;
+    //     // }
+    // }
+
+
     public void printJson() {
         try {
         // FileReader Class used
@@ -59,7 +109,6 @@ public class Database {
         
         // JSONArray jsonArray = CDL.rowToJSONArray(new JSONTokener(json));        
         // System.out.println(jsonArray);
-        System.out.println(json);
         fileReader.close();
         
     }

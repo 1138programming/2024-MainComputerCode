@@ -13,7 +13,7 @@ public class Main {
     public static void main(String[] args) {
         TBARequest.writeToFile(TBARequest.getRequest("team/frc359", null, null));
         database.printJson();
-        database.getConnection();
+        database.viewTables();
     }
     
 
