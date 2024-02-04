@@ -39,7 +39,21 @@ public class Database {
         // }
     }
     public void InsertData() { 
-        String query = "";
+        String query = "Insert into scmatch (Description, BAMatchId) values ('this is a new item', 3)";
+        try (Statement stmt = conn.createStatement()) {
+            int affectedrows = stmt.executeUpdate(query);
+            
+            System.out.println(affectedrows);
+            
+
+          } 
+          catch (SQLException e) {
+            System.err.println("Error inserting data; error =");
+            e.printStackTrace();
+            System.err.println("SQLState: " +
+            ((SQLException)e).getSQLState());
+          }
+
     }
 
     public void viewTables() {
