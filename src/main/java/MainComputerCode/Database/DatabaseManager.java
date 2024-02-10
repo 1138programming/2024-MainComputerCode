@@ -46,6 +46,31 @@ public class DatabaseManager {
             stmt.setInt(1,BAMatchID);
             stmt.setString(3,CreationDate);
             int affectedrows = stmt.executeUpdate();
+            conn.commit();
+            System.out.println(affectedrows);
+            
+
+          } 
+          catch (SQLException e) {
+            System.err.println("Error inserting data; error =");
+            e.printStackTrace();
+            System.err.println("SQLState: " +
+            ((SQLException)e).getSQLState());
+          }
+    }
+
+    public void addSubmission(int MatchID,  String subId,  String firstnName, String lastName, int team) {
+        String insert = "Insert into  matchtransaction (MatchID,  ScouterID, DataPointID, submissionId, team) values (?,?,?,?,?)";
+
+        try (PreparedStatement  stmt = conn.prepareStatement(insert)) {
+            conn.setAutoCommit(false);
+            stmt.setInt(1,MatchID);
+            stmt.setInt(2,1);
+            stmt.setInt(3,1);
+            stmt.setString(4,subId);
+            stmt.setInt(5,team);
+            int affectedrows = stmt.executeUpdate();
+            conn.commit();
             
             System.out.println(affectedrows);
             
@@ -59,11 +84,9 @@ public class DatabaseManager {
           }
     }
 
-    public void addSubmission(int MatchID, int DatapointID,  String firstnName, String lastName, int team, String CreationDate  ) {
+    
 
-    }
-
-    public void proccessSubmissions() {
-
+    public void proccessDataPoints(JSONArray timedData) {
+        
     }
 }

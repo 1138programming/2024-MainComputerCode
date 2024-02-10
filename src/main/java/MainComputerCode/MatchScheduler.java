@@ -10,6 +10,9 @@ import java.util.Iterator;
 import java.util.Properties;
 
 import org.json.JSONObject;
+
+import MainComputerCode.Database.DatabaseManager;
+
 import java.sql.*;
 
 
@@ -17,8 +20,11 @@ import java.sql.*;
 public class MatchScheduler { 
     private String BaMatchID = "0";
     private String json = "";
+    private String subId = "";
+    private static  DatabaseManager database = new DatabaseManager();
     private DirectoryStream stream;
     private  FileReader fileReader;
+
 
 
 
@@ -60,6 +66,8 @@ public class MatchScheduler {
 
                 
             }
+
+            database.addSubmission(1,"hello7","gergory","schultz",1138);
 
     
     
