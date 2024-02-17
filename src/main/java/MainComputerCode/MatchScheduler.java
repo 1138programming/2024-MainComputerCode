@@ -29,11 +29,11 @@ public class MatchScheduler {
 
 
 
-    public void startComp() { 
+    public void startMath() { 
 
     } //low priorty
 
-    public void getSchedule() {
+    public void PopulateMatchSchedule() {
 
     } // low priority
 
