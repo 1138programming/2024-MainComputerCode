@@ -27,16 +27,16 @@ repositories {
 dependencies {
 
     // implementation group: 'org.sputnikdev', name: 'bluetooth-manager', version:'1.0.0-SNAPSHOT'
+     
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    // //Bluetooth
+    // implementation files('libs/com.zsmartsystems.bluetooth.bluegiga-1.0.0-SNAPSHOT.jar')
+
+    // //Database driver
+    // implementation files('libs/mariadb-java-client-3.3.2')
+    // implementation 'org.mariadb.jdbc:mariadb-java-client:3.3.2'
 
 
-    //Bluetooth
-    implementation files('libs/com.zsmartsystems.bluetooth.bluegiga-1.0.0-SNAPSHOT.jar')
-
-    //Database driver
-    implementation files('libs/mariadb-java-client-3.3.2')
-    implementation 'org.mariadb.jdbc:mariadb-java-client:3.3.2'
-
-
-    //Json parsing
-    implementation files('libs/json-20231013.jar')
+    // //Json parsing
+    // implementation files('libs/json-20231013.jar')
 }
